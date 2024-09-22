@@ -2,42 +2,63 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" IE="edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart</title>
+    <title>Kirana's Fruit Stand</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
     <link href="assets/styles.css" rel="stylesheet">
     <script src="assets/script.js" defer></script>
     <script src="assets/front.js" defer></script>
 </head>
 <body>
-    <div class="shopping-cart">
-        <h1>Kirana's Fruit Stand</h1>
-        <div class="currency-selector"></div>
-        <div class="cart-container">
-            <div class="products-container">
-                <h2>Products</h2>
-                <div class="products"></div>
-                <h2>Your Shopping Cart</h2>
-                <div class="empty-btn"></div>
-                <div class="cart"></div>
-            </div>
-            <div class="checkout-container">
-                <h2>Checkout</h2>
-                <div class="checkout">
-                    <div class="cart-total"></div>
-                    <form>
-                        <label>Enter Cash Received:</label>
-                        <input class="received" type="text">
-                        <button class="pay">Submit</button> 
-                    </form>
-                    <h3>Receipt</h3>
-                    <div class="pay-summary"></div>
-                </div>
+<div class="shopping-cart">
+    <h1>Kirana's Fruit Stand</h1>
+    <div class="currency-selector"></div>
+    <div class="cart-container">
+        <div class="products-container">
+            <h2>Products</h2>
+            <div class="products"></div>
+            <h2>Your Shopping Cart</h2>
+            <div class="empty-btn"></div>
+            <div class="cart"></div>
+        </div>
+        <div class="checkout-container">
+            <h2>Checkout</h2>
+            <div class="checkout">
+                <div class="cart-total"></div>
+                <form>
+                    <label>Enter Cash Received:</label>
+                    <input class="received" type="text" placeholder="Amount">
+                    <button class="pay">Submit</button>
+                </form>
+                <h3>Credit Card Payment</h3>
+                <form id="credit-card-form">
+                    <label>Credit Card Number</label>
+                    <input class="card-number" type="text" maxlength="16" placeholder="1234 5678 9101 1121" required>
+                    <label>Expiration Date</label>
+                    <input class="exp-date" type="text" maxlength="5" placeholder="MM/YY" required>
+                    <label>CVV</label>
+                    <input class="cvv" type="text" maxlength="3" placeholder="123" required>
+                    <button class="submit-payment">Pay with Credit Card</button>
+                </form>
+                <div class="pay-summary"></div>
             </div>
         </div>
     </div>
+
+    <!-- Form to add new products -->
+    <h3>Add New Product</h3>
+    <form id="add-product-form">
+        <label>Product Name:</label>
+        <input type="text" id="product-name" required>
+        <label>Product Price:</label>
+        <input type="number" id="product-price" required>
+        <label>Product Image URL:</label>
+        <input type="text" id="product-image" required>
+        <button class="add-product-btn">Add Product</button>
+    </form>
+</div>
 </body>
 </html>
